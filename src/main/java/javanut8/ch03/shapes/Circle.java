@@ -13,10 +13,16 @@ public class Circle {     // The class is still public
             throw new IllegalArgumentException("illegal negative radius");
     }
 
-    // The non-default constructor
+
+    // This is the basic constructor: initialize the radius
     public Circle(double r) {
         checkRadius(r);
         this.r = r;
+    }
+
+    // This constructor uses this() to invoke the constructor above
+    public Circle() {
+        this(1.0);
     }
 
     // Public data accessor methods
