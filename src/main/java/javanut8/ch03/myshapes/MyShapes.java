@@ -1,4 +1,4 @@
-package javanut8.ch03.mycshapes;
+package javanut8.ch03.myshapes;
 
 abstract class Polygon {
     protected final int sides;
@@ -35,4 +35,17 @@ class Square extends Polygon {
 }
 
 public class MyShapes {
+
+    public static void main(String[] args) {
+        // Always can up-cast
+        Polygon poly = new Square(20.0);
+        // Down-cast needs to be explicit
+        Square square = (Square) poly;
+        // Down-cast can fail at runtime
+        //   throws ClassCastExcepction
+        Triangle nono = (Triangle) poly;
+        // Types must be compatible (does not compile)
+        //    Inconvertible types; cannot cast
+        // Triangle nonono = (Triangle) square;
+    }
 }

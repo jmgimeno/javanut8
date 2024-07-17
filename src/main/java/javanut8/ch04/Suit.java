@@ -1,14 +1,13 @@
 package javanut8.ch04;
 
 public enum Suit {
-    // ; at the end of the instance list is mandatory for enums with parameters
     HEART('♥'),
     CLUB('♣'),
     DIAMOND('♦'),
     SPADE('♠');
 
-    private char symbol;
-    private char letter;
+    private final char symbol;
+    private final char letter;
 
     public char getSymbol() {
         return symbol;
@@ -18,7 +17,7 @@ public enum Suit {
         return letter;
     }
 
-    private Suit(char symbol) {
+    Suit(char symbol) {
         this.symbol = symbol;
         this.letter = switch (symbol) {
             case '♥' -> 'H';
